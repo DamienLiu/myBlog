@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Damien&#39;s Blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://damienliu.github.io/myBlog/tags/</link>
     <description>Recent content in Tags on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 07 May 2019 10:19:58 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://damienliu.github.io/myBlog/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>感想</title>
-      <link>http://localhost:1313/tags/%E6%84%9F%E6%83%B3/</link>
+      <link>https://damienliu.github.io/myBlog/tags/%E6%84%9F%E6%83%B3/</link>
       <pubDate>Tue, 07 May 2019 10:19:58 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E6%84%9F%E6%83%B3/</guid>
+      <guid>https://damienliu.github.io/myBlog/tags/%E6%84%9F%E6%83%B3/</guid>
       <description></description>
     </item>
     

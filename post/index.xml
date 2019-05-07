@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Damien&#39;s Blog</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://damienliu.github.io/myBlog/post/</link>
     <description>Recent content in Posts on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 07 May 2019 10:19:58 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://damienliu.github.io/myBlog/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>第一篇个人博客, 随便写写</title>
-      <link>http://localhost:1313/post/first/</link>
+      <link>https://damienliu.github.io/myBlog/post/first/</link>
       <pubDate>Tue, 07 May 2019 10:19:58 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/first/</guid>
+      <guid>https://damienliu.github.io/myBlog/post/first/</guid>
       <description>&lt;h5 id=&#34;第一次做博客-博文内容是用markdown文件写的-也就是-md后缀-语法也十分有趣-值得花时间学习学习-上班研究的能算摸鱼嘛&#34;&gt;第一次做博客，博文内容是用markdown文件写的，也就是.md后缀，语法也十分有趣，值得花时间学习学习。&lt;del&gt;上班研究的能算摸鱼嘛？&lt;/del&gt;&lt;/h5&gt;
 
 &lt;p&gt;关于markdown的语法，我是参考的cnblog上的一位博主&lt;a href=&#34;http://www.cnblogs.com/liugang-vip/p/6337580.html&#34;&gt;凌云之翼&lt;/a&gt;的博客学习的，图文并茂，很容易就上手了，在这里记录一下。&lt;/p&gt;</description>
