@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Damien&#39;s Blog</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Damien&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 07 May 2019 10:19:58 +0800</lastBuildDate>
+    
+        <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Damien</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 06 May 2019 19:07:13 +0800</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>
+
+&lt;p&gt;兴趣使然的程序员. 建立了这个个人博客, 使你充满了决心.&lt;/p&gt;
+
+&lt;h1 id=&#34;感谢-hugo-https-gohugo-io-开源框架-以及主题作者-xianmin-https-www-xianmin-org-对本博客提供的技术支持&#34;&gt;感谢&lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;开源框架, 以及主题作者&lt;a href=&#34;https://www.xianmin.org/&#34;&gt;xianmin&lt;/a&gt;对本博客提供的技术支持.&lt;/h1&gt;
+
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>第一篇个人博客, 随便写写</title>
+      <link>http://localhost:1313/post/first/</link>
+      <pubDate>Tue, 07 May 2019 10:19:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/first/</guid>
+      
+        <description>&lt;h5 id=&#34;第一次做博客-博文内容是用markdown文件写的-也就是-md后缀-语法也十分有趣-值得花时间学习学习-上班研究的能算摸鱼嘛&#34;&gt;第一次做博客，博文内容是用markdown文件写的，也就是.md后缀，语法也十分有趣，值得花时间学习学习。&lt;del&gt;上班研究的能算摸鱼嘛？&lt;/del&gt;&lt;/h5&gt;
+
+&lt;p&gt;关于markdown的语法，我是参考的cnblog上的一位博主&lt;a href=&#34;http://www.cnblogs.com/liugang-vip/p/6337580.html&#34;&gt;凌云之翼&lt;/a&gt;的博客学习的，图文并茂，很容易就上手了，在这里记录一下。&lt;/p&gt;
+
+&lt;p&gt;失业了两个月后，我终于重新找回了人生的方向，新工作是份国企，终于告别了长年累月的加班生涯，有了属于自己的空闲时间。&lt;/p&gt;
+
+&lt;h5 id=&#34;昨天真是倒霉的一天&#34;&gt;昨天真是倒霉的一天。&lt;/h5&gt;
+
+&lt;p&gt;时隔四个多月没有犯的肌无力，昨天又光临了，还好能够勉强行动。研究hugo框架入了神，回过神来发现已经晚上7点多了，同事早就下班回去了，我回去的时候看没下雨就把伞留在了公司。然而倒霉的是，不光睡过了站（M393路公交车要坐22站才到家），下车的时候外面正在下倾盆的大雨，冲回去的时候全身都湿透了。想来我已经多久没有这样淋过雨了，在雨中奔跑，眼睛都被雨水浸透睁不开。上一次这么淋雨是什么时候，应该是在上海，还没毕业的时候，那个时候已经成为肥宅的我好不容易骗来了一个半月的假期，赶去上海爽了一波。&lt;br /&gt;
+那么再上一次呢？&lt;br /&gt;
+挺讨厌下雨的，有种回忆扑面而来的感觉。&lt;br /&gt;
+想要尽快找个稳定的地方住下来，不要再每次这么早起床赶早班车上班了。&lt;del&gt;而且迟不迟到看堵不堵。&lt;/del&gt;但是一个人住的话，会感觉孤独吧，虽然自由了，但是蹭老王的房子住的感觉还是很舒服的，一有空就可以一起打游戏一起恰酒恰夜宵。&lt;br /&gt;
+对了，减肥的计划也应该提上日程了，还是要把肥肉都减下来啊！&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
