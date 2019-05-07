@@ -6,7 +6,7 @@
     <description>Recent content on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 May 2019 10:19:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 15:13:39 +0800</lastBuildDate>
     
         <atom:link href="https://damienliu.github.io/myBlog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,73 @@
 
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>Course</title>
+      <link>https://damienliu.github.io/myBlog/post/course/</link>
+      <pubDate>Tue, 07 May 2019 15:13:39 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/post/course/</guid>
+      
+        <description>&lt;h5 id=&#34;分享一下使用hugo框架-github制作个人页面的教程-手把手教-不懂就问-本教程仅针对windows用户&#34;&gt;分享一下使用hugo框架+github制作个人页面的教程，手把手教，不懂就问。本教程仅针对windows用户。&lt;/h5&gt;
+
+&lt;ul&gt;
+&lt;li&gt;首先，你需要准备好以下工具，才能开始你的工作。&lt;br /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;hugo，以及git。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这里推荐读者自行去官网上下载，这是&lt;a href=&#34;https://git-scm.com/&#34;&gt;git&lt;/a&gt;和&lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt;的官方网站。&lt;br /&gt;
+说一点hugo安装需要注意的地方，下载下来的zip包解压后，可以看到一个hugo.exe文件，这需要在系统的环境变量中的path，把hugo.exe的目录加入进去。以我的路径为例，我的hugo.exe的完整路径是 E:\hugo\hugo.exe ，这时把 E:\hugo; 加入到path环境变量字符串的最前面就好了。&lt;br /&gt;
+检验hugo是否安装成功，打开cmd，输入以下命令，如果有输出，则已成功安装：&lt;code&gt;hugo version&lt;/code&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;工具就位，那么，让我们开始吧。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在你认为合适的地方，新建一个文件夹，存放hugo工程，以本人为例，E:\Damien&amp;rsquo;s Blog。&lt;/li&gt;
+&lt;li&gt;接下来，在这个文件夹中，shift+鼠标右键，在此处打开命令窗口。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;输入命令以新建hugo工程：
+&lt;code&gt;hugo new site myBlog(替换为你的站点名称)&lt;/code&gt;
+。然后你可以看到生成了一个以你的站点名称命名的文件夹。你可以在里面看到这样的目录结构：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;gt; archetypes/
+&amp;gt; content/
+&amp;gt; layouts/
+&amp;gt; static/
+config.toml
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;接下来挑选一个你喜欢的主题，hugo官网上有许许多多琳琅满目的&lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;主题&lt;/a&gt;，以本人比较喜欢也是本博客使用的&lt;a href=&#34;https://themes.gohugo.io/hugo-theme-jane/&#34;&gt;jane主题&lt;/a&gt;为例吧，直接在cmd中输入&lt;br /&gt;
+&lt;code&gt;git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane&lt;/code&gt;
+，将该主题download到了themes文件夹中。然后将本主题中的示例博客(content)和示例配置文件(config.toml)覆盖掉myBlog文件夹中的原文件，可以使用cmd命令实现&lt;br /&gt;
+&lt;code&gt;cp -r themes/jane/exampleSite/content ./&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;cp themes/jane/exampleSite/config.toml ./&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;这样你可以输入以下命令，然后浏览器打开 &lt;a href=&#34;http://localhost:1313&#34;&gt;http://localhost:1313&lt;/a&gt; 查看示例站点的效果了~&lt;br /&gt;
+&lt;code&gt;hugo server&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;预览效果已经出来了，但是我们肯定不能直接拿人作者做的示例页面当成自己的博客吧？接下来讲解一下如何将自己的文章放到博客上去。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;进入到myBlog/thems/jane/archetypes/文件夹中，复制default.md文件，覆盖掉myBlog/archetypes/下的default.md。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;暂时将myBlog/content/文件夹中的文件都移除，放到一个你喜欢的其他的地方，这些文件都是供我们写自己博客的时候参考用的。&lt;/li&gt;
+&lt;li&gt;cmd输入命令 &lt;code&gt;hugo new post/first.md&lt;/code&gt;，然后进入myBlog/content/post/文件夹，用文本编辑器打开first.md。根据个人情况对照示例md文件，改改title、author这些，加一加tags、categories。&lt;em&gt;注意要把draft属性改为false。&lt;/em&gt; 在&amp;lt;!--more--&amp;gt;标签之前的文本内容会在主页进行预览，标签之后的文本会展示在read more按钮点击后的页面中。&lt;/li&gt;
+&lt;li&gt;.md文件的语法参考这位大神的帖子&lt;a href=&#34;http://www.cnblogs.com/liugang-vip/p/6337580.html&#34;&gt;http://www.cnblogs.com/liugang-vip/p/6337580.html&lt;/a&gt;。&lt;/li&gt;
+&lt;/ol&gt;</description>
       
     </item>
     

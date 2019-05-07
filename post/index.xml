@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 May 2019 10:19:58 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 15:13:39 +0800</lastBuildDate>
     
 	<atom:link href="https://damienliu.github.io/myBlog/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Course</title>
+      <link>https://damienliu.github.io/myBlog/post/course/</link>
+      <pubDate>Tue, 07 May 2019 15:13:39 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/post/course/</guid>
+      <description>&lt;h5 id=&#34;分享一下使用hugo框架-github制作个人页面的教程-手把手教-不懂就问-本教程仅针对windows用户&#34;&gt;分享一下使用hugo框架+github制作个人页面的教程，手把手教，不懂就问。本教程仅针对windows用户。&lt;/h5&gt;</description>
+    </item>
     
     <item>
       <title>第一篇个人博客, 随便写写</title>
