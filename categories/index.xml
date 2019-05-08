@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 May 2019 15:13:39 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 15:43:45 +0800</lastBuildDate>
     
 	<atom:link href="https://damienliu.github.io/myBlog/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>随笔</title>
+      <link>https://damienliu.github.io/myBlog/categories/%E9%9A%8F%E7%AC%94/</link>
+      <pubDate>Wed, 08 May 2019 15:43:45 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/categories/%E9%9A%8F%E7%AC%94/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>技术</title>
@@ -17,15 +26,6 @@
       <pubDate>Tue, 07 May 2019 15:13:39 +0800</pubDate>
       
       <guid>https://damienliu.github.io/myBlog/categories/%E6%8A%80%E6%9C%AF/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>随笔</title>
-      <link>https://damienliu.github.io/myBlog/categories/%E9%9A%8F%E7%AC%94/</link>
-      <pubDate>Tue, 07 May 2019 10:19:58 +0800</pubDate>
-      
-      <guid>https://damienliu.github.io/myBlog/categories/%E9%9A%8F%E7%AC%94/</guid>
       <description></description>
     </item>
     
