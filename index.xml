@@ -92,6 +92,35 @@ config.toml
 &lt;li&gt;暂时将myBlog/content/文件夹中的文件都移除，放到一个你喜欢的其他的地方，这些文件都是供我们写自己博客的时候参考用的。&lt;/li&gt;
 &lt;li&gt;cmd输入命令 &lt;code&gt;hugo new post/first.md&lt;/code&gt;，然后进入myBlog/content/post/文件夹，用文本编辑器打开first.md。根据个人情况对照示例md文件，改改title、author这些，加一加tags、categories。&lt;em&gt;注意要把draft属性改为false。&lt;/em&gt; 在&amp;lt;!--more--&amp;gt;标签之前的文本内容会在主页进行预览，标签之后的文本会展示在read more按钮点击后的页面中。&lt;/li&gt;
 &lt;li&gt;.md文件的语法参考这位大神的帖子&lt;a href=&#34;http://www.cnblogs.com/liugang-vip/p/6337580.html&#34;&gt;http://www.cnblogs.com/liugang-vip/p/6337580.html&lt;/a&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;将本地搭建的博客挂载到github page上，以支持公网访问。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;去&lt;a href=&#34;https://github.com/&#34;&gt;https://github.com/&lt;/a&gt;上注册自己的github账号。&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;以本人DamienLiu(&lt;a href=&#34;https://github.com/damienliu&#34;&gt;https://github.com/damienliu&lt;/a&gt;)为例，new一个仓库(Repositories)，&lt;strong&gt;仓库起名规范必须得是damienliu.github.io，注意全部都得是小写！！！&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;复制该github仓库的git链接，&lt;a href=&#34;https://github.com/DamienLiu/damienliu.github.io.git&#34;&gt;https://github.com/DamienLiu/damienliu.github.io.git&lt;/a&gt; 。&lt;/li&gt;
+&lt;li&gt;编辑myBlog/config.toml文件，将baseURL=&amp;ldquo;&lt;a href=&#34;https://damienliu.github.io/&amp;quot;&#34;&gt;https://damienliu.github.io/&amp;quot;&lt;/a&gt; (&lt;strong&gt;与仓库名一致&lt;/strong&gt;)。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;在myBlog/文件夹，右键Git Bash Here，分别输入以下命令(&lt;strong&gt;已经初始化过的跳过前三条&lt;/strong&gt;)：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git config --global user.name &amp;quot;your Github username&amp;quot; (配置github用户名)
+git config --global user.email &amp;quot;your email@xxx.com&amp;quot; (配置github邮箱)
+git config --global user.password &amp;quot;your Github password&amp;quot; (配置github密码)
+hugo (编译hugo工程，打包出一个编译后的public文件夹)
+cd public (进入public文件夹)
+git init (初始化本地仓库)
+git add .  (注意小数点前后都应有一个空格，将当前文件夹下的所有文件添加进本地仓库临时区)
+git commit -m &amp;quot;first commit&amp;quot; (将本地仓库临时区的文件提交进本地仓库正式区)
+git remote add origin https://github.com/DamienLiu/damienliu.github.io.git (将本地仓库和github仓库关联)
+git push (将本地仓库正式区的文件推送到github仓库中)
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;很好，现在你可以浏览器输入&lt;a href=&#34;https://damienliu.github.io/&#34;&gt;https://damienliu.github.io/&lt;/a&gt;查看你的个人博客了。&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;</description>
       
     </item>

@@ -70,7 +70,7 @@
 
 <meta itemprop="datePublished" content="2019-05-07T15:13:39&#43;08:00" />
 <meta itemprop="dateModified" content="2019-05-07T15:13:39&#43;08:00" />
-<meta itemprop="wordCount" content="1178">
+<meta itemprop="wordCount" content="1836">
 
 
 
@@ -412,6 +412,35 @@ config.toml
 <li>暂时将myBlog/content/文件夹中的文件都移除，放到一个你喜欢的其他的地方，这些文件都是供我们写自己博客的时候参考用的。</li>
 <li>cmd输入命令 <code>hugo new post/first.md</code>，然后进入myBlog/content/post/文件夹，用文本编辑器打开first.md。根据个人情况对照示例md文件，改改title、author这些，加一加tags、categories。<em>注意要把draft属性改为false。</em> 在&lt;!--more--&gt;标签之前的文本内容会在主页进行预览，标签之后的文本会展示在read more按钮点击后的页面中。</li>
 <li>.md文件的语法参考这位大神的帖子<a href="http://www.cnblogs.com/liugang-vip/p/6337580.html">http://www.cnblogs.com/liugang-vip/p/6337580.html</a>。</li>
+</ol>
+
+<hr />
+
+<ul>
+<li>将本地搭建的博客挂载到github page上，以支持公网访问。</li>
+</ul>
+
+<ol>
+<li>去<a href="https://github.com/">https://github.com/</a>上注册自己的github账号。<br /></li>
+<li>以本人DamienLiu(<a href="https://github.com/damienliu">https://github.com/damienliu</a>)为例，new一个仓库(Repositories)，<strong>仓库起名规范必须得是damienliu.github.io，注意全部都得是小写！！！</strong></li>
+<li>复制该github仓库的git链接，<a href="https://github.com/DamienLiu/damienliu.github.io.git">https://github.com/DamienLiu/damienliu.github.io.git</a> 。</li>
+<li>编辑myBlog/config.toml文件，将baseURL=&ldquo;<a href="https://damienliu.github.io/&quot;">https://damienliu.github.io/&quot;</a> (<strong>与仓库名一致</strong>)。</li>
+
+<li><p>在myBlog/文件夹，右键Git Bash Here，分别输入以下命令(<strong>已经初始化过的跳过前三条</strong>)：</p>
+
+<pre><code>git config --global user.name &quot;your Github username&quot; (配置github用户名)
+git config --global user.email &quot;your email@xxx.com&quot; (配置github邮箱)
+git config --global user.password &quot;your Github password&quot; (配置github密码)
+hugo (编译hugo工程，打包出一个编译后的public文件夹)
+cd public (进入public文件夹)
+git init (初始化本地仓库)
+git add .  (注意小数点前后都应有一个空格，将当前文件夹下的所有文件添加进本地仓库临时区)
+git commit -m &quot;first commit&quot; (将本地仓库临时区的文件提交进本地仓库正式区)
+git remote add origin https://github.com/DamienLiu/damienliu.github.io.git (将本地仓库和github仓库关联)
+git push (将本地仓库正式区的文件推送到github仓库中)
+</code></pre></li>
+
+<li><p>很好，现在你可以浏览器输入<a href="https://damienliu.github.io/">https://damienliu.github.io/</a>查看你的个人博客了。</p></li>
 </ol>
     </div>
 
