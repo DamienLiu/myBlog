@@ -10,7 +10,50 @@
   
   <url>
     <loc>https://damienliu.github.io/myBlog/categories/</loc>
-    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/post/docker/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/docker/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/linux/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/post/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-05-30T15:35:14+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -28,43 +71,13 @@
   </url>
   
   <url>
-    <loc>https://damienliu.github.io/myBlog/</loc>
-    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://damienliu.github.io/myBlog/post/</loc>
-    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://damienliu.github.io/myBlog/tags/</loc>
-    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://damienliu.github.io/myBlog/tags/git/</loc>
     <lastmod>2019-05-30T09:50:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://damienliu.github.io/myBlog/tags/linux/</loc>
-    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://damienliu.github.io/myBlog/tags/yum/</loc>
-    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://damienliu.github.io/myBlog/categories/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2019-05-30T09:50:23+08:00</lastmod>
     <priority>0</priority>
   </url>

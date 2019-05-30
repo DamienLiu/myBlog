@@ -6,7 +6,7 @@
     <description>Recent content on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 30 May 2019 09:50:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 15:35:14 +0800</lastBuildDate>
     
         <atom:link href="https://damienliu.github.io/myBlog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,67 @@
 
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>CentOs7 部署 Docker</title>
+      <link>https://damienliu.github.io/myBlog/post/docker/</link>
+      <pubDate>Thu, 30 May 2019 15:35:14 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/post/docker/</guid>
+      
+        <description>&lt;p&gt;Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。
+Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。
+容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低。&lt;/p&gt;
+
+&lt;h2 id=&#34;使用-yum-安装&#34;&gt;使用 yum 安装&lt;/h2&gt;
+
+&lt;h4 id=&#34;前提&#34;&gt;前提&lt;/h4&gt;
+
+&lt;p&gt;Docker 要求 CentOs 系统的内核版本高于 3.10，查看本页面的前提条件来验证你的 CentOs 版本是否支持 Docker。
+通过 uname -r 命令查看你当前的内核版本。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# uname -r
+3.10.0-957.el7.x86_64
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&#34;安装-docker&#34;&gt;安装 Docker&lt;/h4&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;移除旧的版本：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# yum remove docker \
+                           docker-client \
+                           docker-common \
+                           docker-latest \
+                           docker-latest-logrotate \
+                           docker-logrotate \
+                           docker-selinux \
+                           docker-engine-selinux \
+                           docker-enginge
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装一些必要的系统工具：&lt;br /&gt;
+&lt;code&gt;[root@localhost ~]# yum install -y yum-utils device-mapper-persistent-data lvm2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;添加软件源信息：&lt;br /&gt;
+&lt;code&gt;[root@localhost ~]# yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;更新 yum 缓存：&lt;br /&gt;
+&lt;code&gt;[root@localhost ~]# yum makecache fast&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装 Docker-ce：&lt;br /&gt;
+&lt;code&gt;[root@localhost ~]# yum -y install docker-ce&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;启动 Docker 后台服务：&lt;br /&gt;
+&lt;code&gt;[root@localhost ~]# systemctl start docker&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;测试运行 hello-world：&lt;br /&gt;
+&lt;code&gt;[root@localhost ~]# docker run hello-world&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
       
     </item>
     
@@ -57,11 +118,11 @@
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ yum -y install curl policycoreutils openssh-server openssh-clients postfix
-[root@localhost ~]$ systemctl enable postfix
-[root@localhost ~]$ systemctl start postfix
-[root@localhost ~]$ systemctl stop firewalld
-[root@localhost ~]$ systemctl disable firewalld
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# yum -y install curl policycoreutils openssh-server openssh-clients postfix
+[root@localhost ~]# systemctl enable postfix
+[root@localhost ~]# systemctl start postfix
+[root@localhost ~]# systemctl stop firewalld
+[root@localhost ~]# systemctl disable firewalld
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
@@ -72,8 +133,8 @@
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh |bash
-[root@localhost ~]$ yum install gitlab-ce
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh |bash
+[root@localhost ~]# yum install gitlab-ce
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;出现如下图所示情景，那么说明安装成功。&lt;/p&gt;
@@ -88,7 +149,7 @@
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ vim /etc/gitlab/gitlab.rb
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# vim /etc/gitlab/gitlab.rb
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;将图中 13 行 external_url &amp;lsquo;&lt;a href=&#34;http://gitlab.example.com&#39;&#34;&gt;http://gitlab.example.com&#39;&lt;/a&gt; 改为 &lt;a href=&#34;http://ip&#34;&gt;http://ip&lt;/a&gt; 或者自己的域名&lt;/p&gt;
@@ -103,8 +164,8 @@
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ gitlab-ctl reconfigure
-[root@localhost ~]$ gitlab-ctl status
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# gitlab-ctl reconfigure
+[root@localhost ~]# gitlab-ctl status
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;hr /&gt;
@@ -133,15 +194,15 @@
 &lt;p&gt;可能是系统自动升级正在运行，yum尚处于锁定状态中。
 首先尝试去 kill 掉正在占用 yum 的进程：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ ps aux|grep yum
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# ps aux|grep yum
 root      6744  0.0  0.0 103260   900 pts/1    S+   14:59   0:00 grep yum
 root     25960  0.0  0.0      0     0 ?        Z    Sep19   0:01 [yumBackend.py] &amp;lt;defunct&amp;gt;
-[root@localhost ~]$ kill -s 9 25960
+[root@localhost ~]# kill -s 9 25960
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;如果 kill 命令无法处理掉的话，可以通过强制关闭的方式关掉 yum 进程：&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ rm -f /var/run/yum.pid
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]# rm -f /var/run/yum.pid
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;然后就可以使用 yum 了。&lt;/p&gt;
