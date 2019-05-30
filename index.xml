@@ -6,7 +6,7 @@
     <description>Recent content on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 May 2019 15:54:49 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 09:50:23 +0800</lastBuildDate>
     
         <atom:link href="https://damienliu.github.io/myBlog/index.xml" rel="self" type="application/rss+xml" />
     
@@ -26,6 +26,127 @@
 
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
+      
+    </item>
+    
+    <item>
+      <title>CentOs7 部署 gitlab 过程</title>
+      <link>https://damienliu.github.io/myBlog/post/gitlab/</link>
+      <pubDate>Thu, 30 May 2019 09:50:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/post/gitlab/</guid>
+      
+        <description>&lt;p&gt;Gitlab 是一个用于仓库管理系统的开源项目，使用 Git 作为代码管理工具，并在此基础上搭建起来的 web 服务。本文将介绍行之有效的 CentOs7 部署 Gitlab 的步骤，以及本人在部署时候遇到的坑和解决方案。Now let&amp;rsquo;s get moving！&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 虚拟机环境&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;操作系统：CentOs7 64位&lt;/li&gt;
+&lt;li&gt;内存：8GB （据说部署 Gitlab 至少要保证有 4GB 的内存，who knows）&lt;/li&gt;
+&lt;li&gt;存储：80GB&lt;/li&gt;
+&lt;li&gt;CPU：CORE&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 安装 Gitlab 的依赖包&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ yum -y install curl policycoreutils openssh-server openssh-clients postfix
+[root@localhost ~]$ systemctl enable postfix
+[root@localhost ~]$ systemctl start postfix
+[root@localhost ~]$ systemctl stop firewalld
+[root@localhost ~]$ systemctl disable firewalld
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 安装 Gitlab-ce 版 yum 源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.rpm.sh |bash
+[root@localhost ~]$ yum install gitlab-ce
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;出现如下图所示情景，那么说明安装成功。
+[&lt;img src=&#34;./screenshot1.png&#34; alt=&#34;screenshot1&#34; /&gt;]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 配置 Gitlab 域名&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ vim /etc/gitlab/gitlab.rb
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;将图中 13 行 external_url &amp;lsquo;&lt;a href=&#34;http://gitlab.example.com&#39;&#34;&gt;http://gitlab.example.com&#39;&lt;/a&gt; 改为 &lt;a href=&#34;http://ip:port&#34;&gt;http://ip:port&lt;/a&gt; 或者自己的域名
+[&lt;img src=&#34;url&#34; alt=&#34;screenshot2&#34; /&gt;]&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 加载配置文件并启动 Gitlab （时间较长，稍安勿躁）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;以下命令建议使用 root 用户执行，不然总是要输入 sudo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ gitlab-ctl reconfigure
+[root@localhost ~]$ gitlab-ctl status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 打开浏览器，登录 Gitlab&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;在浏览器中输入配置 Gitlab 域名步骤中输入的 external_url，即可看到 Gitlab 登录页了。
+第一次登录 Gitlab，需要为超级管理员 root 修改密码&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;## 部署途中遇见的坑&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;1-总是报-permission-denied&#34;&gt;1. 总是报 permission denied&lt;/h4&gt;
+
+&lt;p&gt;强烈推荐还是直接切换到 root 用户来执行命令吧，有些命令加上 sudo 都得不到执行权限。&lt;/p&gt;
+
+&lt;h4 id=&#34;2-yum-提示-another-app-is-currently-holding-the-yum-lock-waiting-for-it-to-exit&#34;&gt;2. yum 提示 Another app is currently holding the yum lock; waiting for it to exit&amp;hellip;&lt;/h4&gt;
+
+&lt;p&gt;可能是系统自动升级正在运行，yum尚处于锁定状态中。
+首先尝试去 kill 掉正在占用 yum 的进程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ ps aux|grep yum
+root      6744  0.0  0.0 103260   900 pts/1    S+   14:59   0:00 grep yum
+root     25960  0.0  0.0      0     0 ?        Z    Sep19   0:01 [yumBackend.py] &amp;lt;defunct&amp;gt;
+[root@localhost ~]$ kill -s 9 25960
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;如果 kill 命令无法处理掉的话，可以通过强制关闭的方式关掉 yum 进程：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[root@localhost ~]$ rm -f /var/run/yum.pid
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后就可以使用 yum 了。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;参考资料:
+&lt;a href=&#34;https://blog.csdn.net/testcs_dn/article/details/48711805&#34;&gt;https://blog.csdn.net/testcs_dn/article/details/48711805&lt;/a&gt;
+&lt;a href=&#34;https://www.cnblogs.com/bigdevilking/p/9539368.html&#34;&gt;https://www.cnblogs.com/bigdevilking/p/9539368.html&lt;/a&gt;&lt;/p&gt;</description>
       
     </item>
     
@@ -247,6 +368,124 @@ git push (将本地仓库正式区的文件推送到github仓库中)
 挺讨厌下雨的，有种回忆扑面而来的感觉。&lt;br /&gt;
 想要尽快找个稳定的地方住下来，不要再每次这么早起床赶早班车上班了。&lt;del&gt;而且迟不迟到看堵不堵。&lt;/del&gt;但是一个人住的话，会感觉孤独吧，虽然自由了，但是蹭老王的房子住的感觉还是很舒服的，一有空就可以一起打游戏一起恰酒恰夜宵。&lt;br /&gt;
 对了，减肥的计划也应该提上日程了，还是要把肥肉都减下来啊！&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Image Preview</title>
+      <link>https://damienliu.github.io/myBlog/post/image-preview/</link>
+      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/post/image-preview/</guid>
+      
+        <description>&lt;p&gt;Thanks for &lt;a href=&#34;https://github.com/liwenyip/hugo-easy-gallery&#34;&gt;liwenyip/hugo-easy-gallery&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://github.com/xianmin/hugo-theme-jane/pull/48&#34;&gt;Zebradil · Pull Request #48&lt;/a&gt; .&lt;/p&gt;
+
+&lt;p&gt;Now, we could use &lt;code&gt;{{&amp;lt; gallery &amp;gt;}}&lt;/code&gt; shortcode in hugo-theme-jane.&lt;/p&gt;
+
+&lt;h2 id=&#34;normal-image&#34;&gt;Normal Image&lt;/h2&gt;
+
+&lt;p&gt;This is an image in &lt;code&gt;static/image&lt;/code&gt; folder.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;![This is an image in `static/image` folder.](/image/example.jpg)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;figure-shortcode&#34;&gt;&lt;code&gt;{{&amp;lt; figure &amp;gt;}}&lt;/code&gt; shortcode&lt;/h2&gt;
+
+&lt;h3 id=&#34;figure-image-with-title&#34;&gt;figure image with title&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; figure src=&amp;quot;/image/example.jpg&amp;quot; title=&amp;quot;figure image with title&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;figure-image-with-caption&#34;&gt;figure image with caption&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; figure src=&amp;quot;/image/example.jpg&amp;quot; caption=&amp;quot;figure image with caption figure image with caption figure image with caption figure image with caption figure image with caption&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;more-figure-shortcode-usage&#34;&gt;more &lt;code&gt;{{&amp;lt; figure &amp;gt;}}&lt;/code&gt; shortcode usage&lt;/h3&gt;
+
+&lt;p&gt;Specifying your image files:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; figure src=&amp;quot;thumb.jpg&amp;quot; link=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code&gt; will use &lt;code&gt;thumb.jpg&lt;/code&gt; for thumbnail and &lt;code&gt;image.jpg&lt;/code&gt; for lightbox&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; figure src=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code&gt; or &lt;code&gt;{{&amp;lt; figure link=&amp;quot;image.jpg&amp;quot; &amp;gt;}}&lt;/code&gt; will use &lt;code&gt;image.jpg&lt;/code&gt; for both thumbnail and lightbox&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{{&amp;lt; figure link=&amp;quot;image.jpg&amp;quot; thumb=&amp;quot;-small&amp;quot; &amp;gt;}}&lt;/code&gt; will use &lt;code&gt;image-small.jpg&lt;/code&gt; for thumbnail and &lt;code&gt;image.jpg&lt;/code&gt; for lightbox&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Optional parameters:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;All the &lt;a href=&#34;https://gohugo.io/extras/shortcodes&#34;&gt;features/parameters&lt;/a&gt; of Hugo&amp;rsquo;s built-in &lt;code&gt;figure&lt;/code&gt; shortcode work as normal, i.e. src, link, title, caption, class, attr (attribution), attrlink, alt&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;size&lt;/code&gt; (e.g. &lt;code&gt;size=&amp;quot;1024x768&amp;quot;&lt;/code&gt;) pre-defines the image size for PhotoSwipe. Use this option if you don&amp;rsquo;t want to pre-load the linked image to determine its size.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt; allows you to set any custom classes you want on the &lt;code&gt;&amp;lt;figure&amp;gt;&lt;/code&gt; tag.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Optional parameters for standalone &lt;code&gt;{{&amp;lt; figure &amp;gt;}}&lt;/code&gt; shortcodes only (i.e. don&amp;rsquo;t use on &lt;code&gt;{{&amp;lt; figure &amp;gt;}}&lt;/code&gt; inside &lt;code&gt;{{&amp;lt; gallery &amp;gt;}}&lt;/code&gt; - strange things may happen if you do):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;caption-position&lt;/code&gt; and &lt;code&gt;caption-effect&lt;/code&gt; work the same as for the &lt;code&gt;{{&amp;lt; gallery &amp;gt;}}&lt;/code&gt; shortcode (see below).&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;width&lt;/code&gt; defines the &lt;a href=&#34;https://www.w3schools.com/cssref/pr_dim_max-width.asp&#34;&gt;&lt;code&gt;max-width&lt;/code&gt;&lt;/a&gt; of the image displayed on the page. If using a thumbnail for a standalone figure, set this equal to your thumbnail&amp;rsquo;s native width to make the captions behave properly (or feel free to come up with a better solution and submit a pull request :-)). Also use this option if you don&amp;rsquo;t have a thumbnail and you don&amp;rsquo;t want the hi-res image to take up the entire width of the screen/container.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;class=&amp;quot;no-photoswipe&amp;quot;&lt;/code&gt; prevents a &lt;code&gt;&amp;lt;figure&amp;gt;&lt;/code&gt; from being loaded into PhotoSwipe. If you click on the figure you&amp;rsquo;ll instead a good ol&amp;rsquo; fashioned hyperlink to a bigger image (or - if you haven&amp;rsquo;t specified a bigger image - the same one).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;gallery-shortcode&#34;&gt;&lt;code&gt;{{&amp;lt; gallery &amp;gt;}}&lt;/code&gt; shortcode&lt;/h2&gt;
+
+&lt;h3 id=&#34;simple-gallery&#34;&gt;simple gallery&lt;/h3&gt;
+
+&lt;p&gt;To specify a directory of image files:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; gallery dir=&amp;quot;/img/your-directory-of-images/&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The images are automatically captioned with the file name.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[image].jpg&lt;/code&gt; is used for the hi-res image, and &lt;code&gt;[image]-thumb.jpg&lt;/code&gt; is used for the thumbnails.&lt;/li&gt;
+&lt;li&gt;If &lt;code&gt;[image]-thumb.jpg&lt;/code&gt; doesn&amp;rsquo;t exist, then &lt;code&gt;[image].jpg&lt;/code&gt; will be used for both hi-res and thumbnail images.&lt;/li&gt;
+&lt;li&gt;The default thumbnail suffix is &lt;code&gt;-thumb&lt;/code&gt;, but you can specify a different one e.g. &lt;code&gt;thumb=&amp;quot;-small&amp;quot;&lt;/code&gt; or &lt;code&gt;thumb=&amp;quot;_150x150&amp;quot;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;to-specify-individual-image-files&#34;&gt;To specify individual image files&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;{{&amp;lt; gallery &amp;gt;}}
+  {{&amp;lt; figure src=&amp;quot;image1.jpg&amp;quot; &amp;gt;}}
+  {{&amp;lt; figure src=&amp;quot;image2.jpg&amp;quot; &amp;gt;}}
+  {{&amp;lt; figure src=&amp;quot;image3.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; /gallery &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;Optional parameters:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;caption-position&lt;/code&gt; - determines the captions&amp;rsquo; position over the image. Options:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bottom&lt;/code&gt; (default)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;center&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;none&lt;/code&gt; hides captions on the page (they will only show in PhotoSwipe)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;caption-effect&lt;/code&gt; - determines if/how captions appear upon hover. Options:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;slide&lt;/code&gt; (default)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fade&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;none&lt;/code&gt; (captions always visible)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hover-effect&lt;/code&gt; - determines if/how images change upon hover. Options:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zoom&lt;/code&gt; (default)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;grow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;shrink&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slideup&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;slidedown&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;none&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hover-transition&lt;/code&gt; - determines if/how images change upon hover. Options:
+
+&lt;ul&gt;
+&lt;li&gt;not set - smooth transition (default)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;none&lt;/code&gt; - hard transition&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
       
     </item>
     

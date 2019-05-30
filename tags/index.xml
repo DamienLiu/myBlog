@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Damien&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 28 May 2019 15:54:49 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2019 09:50:23 +0800</lastBuildDate>
     
 	<atom:link href="https://damienliu.github.io/myBlog/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CentOs</title>
+      <link>https://damienliu.github.io/myBlog/tags/centos/</link>
+      <pubDate>Thu, 30 May 2019 09:50:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://damienliu.github.io/myBlog/tags/git/</link>
+      <pubDate>Thu, 30 May 2019 09:50:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://damienliu.github.io/myBlog/tags/linux/</link>
+      <pubDate>Thu, 30 May 2019 09:50:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>yum</title>
+      <link>https://damienliu.github.io/myBlog/tags/yum/</link>
+      <pubDate>Thu, 30 May 2019 09:50:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/yum/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>生命</title>
@@ -26,15 +62,6 @@
       <pubDate>Wed, 08 May 2019 15:43:45 +0800</pubDate>
       
       <guid>https://damienliu.github.io/myBlog/tags/%E6%97%A5%E8%AE%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://damienliu.github.io/myBlog/tags/git/</link>
-      <pubDate>Tue, 07 May 2019 15:13:39 +0800</pubDate>
-      
-      <guid>https://damienliu.github.io/myBlog/tags/git/</guid>
       <description></description>
     </item>
     
@@ -62,6 +89,42 @@
       <pubDate>Tue, 07 May 2019 10:19:58 +0800</pubDate>
       
       <guid>https://damienliu.github.io/myBlog/tags/%E6%84%9F%E6%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>image</title>
+      <link>https://damienliu.github.io/myBlog/tags/image/</link>
+      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/image/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>preview</title>
+      <link>https://damienliu.github.io/myBlog/tags/preview/</link>
+      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/preview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>shortcodes</title>
+      <link>https://damienliu.github.io/myBlog/tags/shortcodes/</link>
+      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/shortcodes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-7</title>
+      <link>https://damienliu.github.io/myBlog/tags/tag-7/</link>
+      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/tags/tag-7/</guid>
       <description></description>
     </item>
     

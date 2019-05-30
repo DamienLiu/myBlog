@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>yum on Damien&#39;s Blog</title>
+    <link>https://damienliu.github.io/myBlog/tags/yum/</link>
+    <description>Recent content in yum on Damien&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 May 2019 09:50:23 +0800</lastBuildDate>
+    
+	<atom:link href="https://damienliu.github.io/myBlog/tags/yum/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CentOs7 部署 gitlab 过程</title>
+      <link>https://damienliu.github.io/myBlog/post/gitlab/</link>
+      <pubDate>Thu, 30 May 2019 09:50:23 +0800</pubDate>
+      
+      <guid>https://damienliu.github.io/myBlog/post/gitlab/</guid>
+      <description>&lt;p&gt;Gitlab 是一个用于仓库管理系统的开源项目，使用 Git 作为代码管理工具，并在此基础上搭建起来的 web 服务。本文将介绍行之有效的 CentOs7 部署 Gitlab 的步骤，以及本人在部署时候遇到的坑和解决方案。Now let&amp;rsquo;s get moving！&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

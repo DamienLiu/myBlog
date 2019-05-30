@@ -10,25 +10,62 @@
   
   <url>
     <loc>https://damienliu.github.io/myBlog/categories/</loc>
-    <lastmod>2019-05-28T15:54:49+08:00</lastmod>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://damienliu.github.io/myBlog/tags/centos/</loc>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/post/gitlab/</loc>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://damienliu.github.io/myBlog/</loc>
-    <lastmod>2019-05-28T15:54:49+08:00</lastmod>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://damienliu.github.io/myBlog/post/</loc>
-    <lastmod>2019-05-28T15:54:49+08:00</lastmod>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://damienliu.github.io/myBlog/tags/</loc>
-    <lastmod>2019-05-28T15:54:49+08:00</lastmod>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/git/</loc>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/linux/</loc>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/yum/</loc>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/categories/%E6%8A%80%E6%9C%AF/</loc>
+    <lastmod>2019-05-30T09:50:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,12 +102,6 @@
   </url>
   
   <url>
-    <loc>https://damienliu.github.io/myBlog/tags/git/</loc>
-    <lastmod>2019-05-08T14:38:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://damienliu.github.io/myBlog/tags/github/</loc>
     <lastmod>2019-05-08T14:38:12+08:00</lastmod>
     <priority>0</priority>
@@ -90,12 +121,6 @@
   </url>
   
   <url>
-    <loc>https://damienliu.github.io/myBlog/categories/%E6%8A%80%E6%9C%AF/</loc>
-    <lastmod>2019-05-08T14:38:12+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://damienliu.github.io/myBlog/tags/%E6%84%9F%E6%83%B3/</loc>
     <lastmod>2019-05-07T10:19:58+08:00</lastmod>
     <priority>0</priority>
@@ -106,6 +131,55 @@
     <lastmod>2019-05-07T10:19:58+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/post/image-preview/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/categories/docs/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/image/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/categories/index/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/preview/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/categories/shortcodes/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/shortcodes/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://damienliu.github.io/myBlog/tags/tag-7/</loc>
+    <lastmod>2018-03-04T16:01:23+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>
