@@ -76,8 +76,9 @@
 [root@localhost ~]$ yum install gitlab-ce
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;出现如下图所示情景，那么说明安装成功。
-[&lt;img src=&#34;./screenshot1.png&#34; alt=&#34;screenshot1&#34; /&gt;]&lt;/p&gt;
+&lt;p&gt;出现如下图所示情景，那么说明安装成功。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://damienliu.github.io/myBlog/myBlog/image/screenshot1.png&#34; alt=&#34;screenshot1&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -90,8 +91,9 @@
 &lt;pre&gt;&lt;code&gt;[root@localhost ~]$ vim /etc/gitlab/gitlab.rb
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;将图中 13 行 external_url &amp;lsquo;&lt;a href=&#34;http://gitlab.example.com&#39;&#34;&gt;http://gitlab.example.com&#39;&lt;/a&gt; 改为 &lt;a href=&#34;http://ip:port&#34;&gt;http://ip:port&lt;/a&gt; 或者自己的域名
-[&lt;img src=&#34;url&#34; alt=&#34;screenshot2&#34; /&gt;]&lt;/p&gt;
+&lt;p&gt;将图中 13 行 external_url &amp;lsquo;&lt;a href=&#34;http://gitlab.example.com&#39;&#34;&gt;http://gitlab.example.com&#39;&lt;/a&gt; 改为 &lt;a href=&#34;http://ip&#34;&gt;http://ip&lt;/a&gt; 或者自己的域名&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://damienliu.github.io/myBlog/myBlog/image/screenshot2.png&#34; alt=&#34;screenshot2&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -113,6 +115,8 @@
 
 &lt;p&gt;在浏览器中输入配置 Gitlab 域名步骤中输入的 external_url，即可看到 Gitlab 登录页了。
 第一次登录 Gitlab，需要为超级管理员 root 修改密码&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://damienliu.github.io/myBlog/myBlog/image/screenshot3.png&#34; alt=&#34;screenshot3&#34; /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
